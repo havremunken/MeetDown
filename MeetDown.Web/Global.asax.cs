@@ -17,7 +17,7 @@ namespace MeetDown.Web
 
     public class MvcApplication : NinjectHttpApplication
     {
-        protected void Application_Start()
+        protected new void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
 
