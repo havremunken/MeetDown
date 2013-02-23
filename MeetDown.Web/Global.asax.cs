@@ -1,4 +1,5 @@
-﻿using Ninject;
+﻿using MeetDown.Core.Modules;
+using Ninject;
 using Ninject.Web.Common;
 using System;
 using System.Collections.Generic;
@@ -17,8 +18,10 @@ namespace MeetDown.Web
 
     public class MvcApplication : NinjectHttpApplication
     {
-        protected new void Application_Start()
+        protected override void OnApplicationStarted()
         {
+            base.OnApplicationStarted();
+
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
@@ -31,7 +34,8 @@ namespace MeetDown.Web
         protected override IKernel CreateKernel()
         {
             var kernel = new StandardKernel();
-            kernel.Load(Assembly.GetExecutingAssembly());
+            kernel.Load(Assembly.GetExecutingAssembly(),
+                        Assembly.GetAssembly(typeof(RavenDbModule)));
 
             return kernel;
         }
