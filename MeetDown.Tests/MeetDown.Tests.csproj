@@ -60,6 +60,16 @@
     <Folder Include="Core\" />
     <Folder Include="Web\Controllers\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MeetDown.Core\MeetDown.Core.csproj">
+      <Project>{9cce295c-6b9a-4c4d-987a-b7b228011ced}</Project>
+      <Name>MeetDown.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MeetDown.Web\MeetDown.Web.csproj">
+      <Project>{3dfddeb7-217f-4dec-adb5-f5fbd32e9221}</Project>
+      <Name>MeetDown.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
