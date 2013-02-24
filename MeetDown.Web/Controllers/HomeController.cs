@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MeetDown.Core.Entities;
+using Raven.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +10,20 @@ namespace MeetDown.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private IDocumentSession _documentSession;
+
+        public HomeController(IDocumentSession documentSession)
+        {
+            _documentSession = documentSession;
+        }
+
         public ActionResult Index()
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            var groups = _documentSession.Query<Group>()
+                                         .ToList();
+
+            ViewBag.Groups = groups;
 
             return View();
         }
