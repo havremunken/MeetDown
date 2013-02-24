@@ -49,6 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Discussion.cs" />
+    <Compile Include="Entities\DiscussionMessage.cs" />
+    <Compile Include="Entities\Group.cs" />
+    <Compile Include="Entities\Location.cs" />
+    <Compile Include="Entities\Event.cs" />
+    <Compile Include="Entities\EventComment.cs" />
+    <Compile Include="Entities\ActivityItem.cs" />
+    <Compile Include="Enums\ActivityItemType.cs" />
+    <Compile Include="Enums\EventStatus.cs" />
     <Compile Include="Modules\RavenDbModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
