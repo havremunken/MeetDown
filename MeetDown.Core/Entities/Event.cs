@@ -31,11 +31,14 @@ namespace MeetDown.Core.Entities
         public IEnumerable<string> UsersAttending { get; set; }
         public IEnumerable<string> UsersNotAttending { get; set; }
 
+        public IEnumerable<EventReview> Reviews { get; private set; }
+
         public Event()
         {
             Comments = new List<EventComment>();
             UsersAttending = new List<string>();
             UsersNotAttending = new List<string>();
+            Reviews = new List<EventReview>();
         }
     }
 }

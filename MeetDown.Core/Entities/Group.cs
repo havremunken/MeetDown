@@ -18,10 +18,12 @@ namespace MeetDown.Core.Entities
         public DateTime Created { get; set; }
         public string Organizer { get; set; }
 
-        public IEnumerable<string> Tags { get; set; }
-        public IEnumerable<string> MeetDowns { get; set; }
+        public IEnumerable<string> Tags { get; private set; }
+        public IEnumerable<string> MeetDowns { get; private set; }
 
-        public IEnumerable<ActivityItem> RecentActivities { get; set; }
+        public IEnumerable<ActivityItem> RecentActivities { get; private set; }
+
+        public IEnumerable<GroupReview> Reviews { get; private set; }
 
         public Group()
         {
@@ -30,6 +32,7 @@ namespace MeetDown.Core.Entities
             Tags = new List<string>();
             MeetDowns = new List<string>();
             RecentActivities = new List<ActivityItem>();
+            Reviews = new List<GroupReview>();
         }
     }
 }

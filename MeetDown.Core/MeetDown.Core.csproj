@@ -51,11 +51,14 @@
   <ItemGroup>
     <Compile Include="Entities\Discussion.cs" />
     <Compile Include="Entities\DiscussionMessage.cs" />
+    <Compile Include="Entities\EventReview.cs" />
     <Compile Include="Entities\Group.cs" />
+    <Compile Include="Entities\GroupReview.cs" />
     <Compile Include="Entities\Location.cs" />
     <Compile Include="Entities\Event.cs" />
     <Compile Include="Entities\EventComment.cs" />
     <Compile Include="Entities\ActivityItem.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Enums\ActivityItemType.cs" />
     <Compile Include="Enums\EventStatus.cs" />
     <Compile Include="Modules\RavenDbModule.cs" />
