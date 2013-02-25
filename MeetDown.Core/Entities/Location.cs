@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MeetDown.Core.Entities
 {
+    /// <summary>
+    /// A class representing a registered location where events can be arranged
+    /// </summary>
     public class Location
     {
         public string Id { get; set; }

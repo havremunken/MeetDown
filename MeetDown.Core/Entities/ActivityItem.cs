@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace MeetDown.Core.Entities
 {
+    /// <summary>
+    /// A class representing an activity item in the history for a Group
+    /// </summary>
     public class ActivityItem
     {
         public ActivityItemType Type { get; set; }

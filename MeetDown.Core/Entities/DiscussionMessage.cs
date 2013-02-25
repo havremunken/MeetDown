@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MeetDown.Core.Entities
 {
+    /// <summary>
+    /// A class representing a single message in a discussion
+    /// </summary>
     public class DiscussionMessage
     {
         public string UserId { get; set; }

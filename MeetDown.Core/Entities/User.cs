@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MeetDown.Core.Entities
 {
+    /// <summary>
+    /// A class representing a user of the MeetDown system
+    /// </summary>
     public class User
     {
         public string Id { get; set; }

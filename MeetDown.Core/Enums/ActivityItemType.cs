@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MeetDown.Core.Enums
 {
+    /// <summary>
+    /// An enum representing the existing activity types for a group
+    /// </summary>
     public enum ActivityItemType
     {
         RsvpYes,

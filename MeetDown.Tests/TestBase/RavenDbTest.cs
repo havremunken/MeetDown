@@ -8,6 +8,9 @@ using Raven.Client.Embedded;
 
 namespace MeetDown.Tests.TestBase
 {
+    /// <summary>
+    /// Abstract base class for tests that need access to the in-memory RavenDB document store
+    /// </summary>
     public abstract class RavenDbTest
     {
         public IDocumentStore DocumentStore { get; private set; }

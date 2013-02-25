@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace MeetDown.Core.Modules
 {
+    /// <summary>
+    /// A Ninject module that provides anything RavenDB related
+    /// </summary>
     public class RavenDbModule : NinjectModule
     {
         private readonly DocumentStore _store;

@@ -10,12 +10,20 @@ namespace MeetDown.Web.Controllers
 {
     public class HomeController : Controller
     {
+        #region Fields
+
         private IDocumentSession _documentSession;
+
+        #endregion
+
+        #region Constructor
 
         public HomeController(IDocumentSession documentSession)
         {
             _documentSession = documentSession;
         }
+
+        #endregion
 
         public ActionResult Index()
         {
