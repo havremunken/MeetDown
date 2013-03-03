@@ -11,9 +11,28 @@ namespace MeetDown.Core.Entities
     /// </summary>
     public class Group
     {
+        #region Fields
+
+        private string _name;
+
+        #endregion
+
         public string Id { get; set; }
 
-        public string Name { get; set; }
+        public string Name
+        {
+            get { return _name; } 
+            set
+            {
+                if(_name==value)
+                    return;
+                _name = value;
+                CreateSlug();
+            }
+        }
+
+        public string Slug { get; private set; }
+
         public IEnumerable<string> Members { get; private set; }
         public DateTime Created { get; set; }
         public string Organizer { get; set; }
@@ -34,5 +53,14 @@ namespace MeetDown.Core.Entities
             RecentActivities = new List<ActivityItem>();
             Reviews = new List<GroupReview>();
         }
+
+        #region Private methods
+
+        private void CreateSlug()
+        {
+            Slug = _name.Replace(" ", String.Empty);
+        }
+
+        #endregion
     }
 }
