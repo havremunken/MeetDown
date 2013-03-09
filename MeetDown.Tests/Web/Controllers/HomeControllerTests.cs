@@ -40,5 +40,7 @@ namespace MeetDown.Tests.Web.Controllers
             Assert.Equal(1, groups.Count());
             Assert.Equal("Test group", groups.Single().Name);
         }
+
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using MeetDown.Core.Entities;
+﻿using System.Globalization;
+using MeetDown.Core.Entities;
 using Raven.Client;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace MeetDown.Web.Controllers
     {
         #region Fields
 
-        private IDocumentSession _documentSession;
+        private readonly IDocumentSession _documentSession;
 
         #endregion
 
@@ -34,6 +35,17 @@ namespace MeetDown.Web.Controllers
             ViewBag.Groups = groups;
 
             return View();
+        }
+
+        public ActionResult Index(string id)
+        {
+            var group = _documentSession.Query<Group>()
+                                        .First(g => String.Compare(g.Slug, id, true, CultureInfo.InvariantCulture) == 0);
+
+            if (group == null)
+                return View("UnknownGroup");
+
+            return View("GroupView", group);
         }
 
         public ActionResult About()
