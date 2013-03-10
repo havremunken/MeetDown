@@ -3,11 +3,19 @@ Readme for MeetDown
 
 Demo project for Drammen Software Developer meetup.
 
-Dette er et pinlig grunnleggende web-prosjekt som er ment for å vise hvordan
-man kan bruke RavenDB i en webapplikasjon.
+Dette er et pinlig grunnleggende web-prosjekt som kun er ment som en demonstrasjon for Ã¥ vise hvordan man kan bruke RavenDB i en webapplikasjon.
 
-Det er brukt veldig lite energi på å følge generelle "best practices", men ting
-er gjort på en grei nok måte der det ikke har krevd for mye.
+Det er brukt veldig lite energi pÃ¥ Ã¥ fÃ¸lge generelle "best practices", men ting er gjort pÃ¥ en grei nok mÃ¥te der det ikke har krevd for mye.
 
-Bidra gjerne til å gjøre dette bedre i etterkant, så kan det fungere som en
-historisk studie i hvordan man kan løse enkelte ting.
+Bidra gjerne til Ã¥ gjÃ¸re dette bedre i etterkant, sÃ¥ kan det fungere som en historisk studie i hvordan man kan lÃ¸se enkelte ting.
+
+Applikasjonen spiller buzzword bingo med fÃ¸lgende:
+
+- ASP.NET MVC4 (MVC-rammeverk)
+- Ninject 3 (Dependency Injection)
+- RavenDB (Database)
+- XUnit.Net, Moq, *AutoFixture* (Unit testing)
+
+Prosjektet er pÃ¥ ingen mÃ¥te noe forsÃ¸k pÃ¥ Ã¥ klone all funksjonaliteten til meetup.com - den er kun brukt som utgangspunkt for en *simpel* domenemodell, som igjen er der kun for Ã¥ illustrere hvordan man typisk kan bruke RavenDB i en applikasjon.
+
+
