@@ -203,6 +203,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -333,6 +334,8 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\GroupView.cshtml" />
     <Content Include="Views\Home\UnknownGroup.cshtml" />
+    <Content Include="Views\Group\UnknownGroup.cshtml" />
+    <Content Include="Views\Group\Info.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
