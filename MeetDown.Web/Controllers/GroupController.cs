@@ -12,7 +12,7 @@ namespace MeetDown.Web.Controllers
     {
         #region Fields
 
-        private IDocumentSession _session;
+        private readonly IDocumentSession _session;
 
         #endregion
 
