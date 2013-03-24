@@ -28,7 +28,7 @@ namespace MeetDown.Web.Controllers
 
         #endregion
 
-        public ActionResult Seed()
+        public ActionResult Index()
         {
             _seeder.PerformSeed();
 
