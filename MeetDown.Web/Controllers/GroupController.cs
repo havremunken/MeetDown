@@ -25,13 +25,13 @@ namespace MeetDown.Web.Controllers
 
         #endregion
 
-        public ActionResult Info(string id)
+        public ActionResult Info(string slug)
         {
-            if (String.IsNullOrWhiteSpace(id))
+            if (String.IsNullOrWhiteSpace(slug))
                 return RedirectToAction("Index", "Home");
 
             var grp = _session.Query<Group>()
-                                .SingleOrDefault(g => g.Slug == id);
+                                .SingleOrDefault(g => g.Slug == slug);
 
             return grp == null ? View("UnknownGroup") : View("Info", grp);
         }
