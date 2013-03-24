@@ -37,17 +37,6 @@ namespace MeetDown.Web.Controllers
             return View();
         }
 
-        public ActionResult Index(string id)
-        {
-            var group = _documentSession.Query<Group>()
-                                        .First(g => String.Compare(g.Slug, id, true, CultureInfo.InvariantCulture) == 0);
-
-            if (group == null)
-                return View("UnknownGroup");
-
-            return View("GroupView", group);
-        }
-
         public ActionResult About()
         {
             ViewBag.Message = "Your app description page.";
