@@ -63,6 +63,7 @@
     <Compile Include="Enums\EventStatus.cs" />
     <Compile Include="Modules\RavenDbModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\DatabaseSeeder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

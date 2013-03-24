@@ -62,5 +62,25 @@ namespace MeetDown.Core.Entities
         }
 
         #endregion
+
+        public static implicit operator Group(string username)
+        {
+            return new Group
+            {
+                Name = username,
+                Created = DateTime.Now
+            };
+        }
+
+        public void AddMember(string id)
+        {
+            ((IList<string>)Members).Add(id);
+        }
+
+        public void AddMembers(IEnumerable<string> ids )
+        {
+            ((List<string>)Members).AddRange(ids);
+        }
+
     }
 }

@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Utility\DatabaseSeederTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBase\HttpStubs.cs" />
     <Compile Include="TestBase\NoStaleQueriesListener.cs" />
@@ -79,9 +80,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Core\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\MeetDown.Core\MeetDown.Core.csproj">
       <Project>{9cce295c-6b9a-4c4d-987a-b7b228011ced}</Project>

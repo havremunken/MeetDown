@@ -30,5 +30,15 @@ namespace MeetDown.Core.Entities
         {
             EventsAttended = new List<string>();
         }
+
+        public static implicit operator User(string username)
+        {
+            return new User
+                {
+                    Id = username,
+                    Name = username,
+                    Joined = DateTime.Now
+                };
+        }
     }
 }
