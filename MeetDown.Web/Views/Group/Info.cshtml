@@ -6,4 +6,15 @@
 
 <h2>@Model.Name</h2>
 
-Welcome to @Model.Name!
+Welcome to @Model.Name!<br/>
+
+<p>Her har du en snasen liste over våre medlemmer:</p>
+
+<ul>
+    @foreach (var member in @Model.Members)
+    {
+        <li>@Html.ActionLink(member, "Profile", "User")</li>
+    }
+</ul>
+
+Gildt!
