@@ -31,7 +31,7 @@ namespace MeetDown.Web.Controllers
                 return RedirectToAction("Index", "Home");
 
             var grp = _session.Query<Group>()
-                                .SingleOrDefault(g => g.Slug == slug);
+                                .FirstOrDefault(g => g.Slug == slug);
 
             return grp == null ? View("UnknownGroup") : View("Info", grp);
         }
