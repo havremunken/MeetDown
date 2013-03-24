@@ -28,13 +28,13 @@ namespace MeetDown.Web.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            ViewBag.Message = "Velkommen til MeetDown! Her har du en flott liste over våre største meetups!";
             var groups = _documentSession.Query<Group>()
+                                         .AsEnumerable()
+                                         .OrderByDescending(g => g.Members.Count())
                                          .ToList();
 
-            ViewBag.Groups = groups;
-
-            return View();
+            return View(groups);
         }
 
         public ActionResult About()
