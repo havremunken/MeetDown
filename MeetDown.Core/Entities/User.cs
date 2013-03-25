@@ -35,10 +35,20 @@ namespace MeetDown.Core.Entities
         {
             return new User
                 {
-                    Id = username,
                     Name = username,
-                    Joined = DateTime.Now
+                    Joined = GetRandomJoinDate()
                 };
         }
+
+        // Stolt av det under, men men - raskeste vei til mål...
+        private static Random _random;
+        public static DateTime GetRandomJoinDate()
+        {
+            if(_random == null)
+                _random = new Random(DateTime.Now.Millisecond);
+
+            return DateTime.Now.AddDays(-_random.Next(1000));
+        }
+
     }
 }
