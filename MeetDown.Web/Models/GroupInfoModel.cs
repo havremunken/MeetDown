@@ -21,7 +21,7 @@ namespace MeetDown.Web.Models
                 return;
 
             var members = Group.Members
-                               .Select(member => session.Load<User>(member))
+                               .Select(session.Load<User>)
                                .Where(user => user != null)
                                .ToList();
             Members = members;
