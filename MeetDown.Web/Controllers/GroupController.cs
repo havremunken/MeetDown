@@ -33,7 +33,7 @@ namespace MeetDown.Web.Controllers
 
             var model = new GroupInfoModel(slug, _session);
 
-            return model == null ? View("UnknownGroup") : View("Info", model);
+            return model.Group == null ? View("UnknownGroup") : View("Info", model);
         }
 
     }
