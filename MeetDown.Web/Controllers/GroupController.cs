@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MeetDown.Web.Models;
 using Raven.Client;
 using MeetDown.Core.Entities;
 
@@ -30,10 +31,9 @@ namespace MeetDown.Web.Controllers
             if (String.IsNullOrWhiteSpace(slug))
                 return RedirectToAction("Index", "Home");
 
-            var grp = _session.Query<Group>()
-                                .FirstOrDefault(g => g.Slug == slug);
+            var model = new GroupInfoModel(slug, _session);
 
-            return grp == null ? View("UnknownGroup") : View("Info", grp);
+            return model == null ? View("UnknownGroup") : View("Info", model);
         }
 
     }

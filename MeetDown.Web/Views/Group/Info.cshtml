@@ -1,19 +1,20 @@
-﻿@model MeetDown.Core.Entities.Group
+﻿@model MeetDown.Web.Models.GroupInfoModel
 
 @{
-    ViewBag.Title = Model.Name;
+    ViewBag.Title = Model.Group.Name;
 }
 
-<h2>@Model.Name</h2>
+<h2>@Model.Group.Name</h2>
 
-Welcome to @Model.Name!<br/>
+Welcome to @Model.Group.Name!<br/>
 
 <p>Her har du en snasen liste over våre medlemmer:</p>
 
 <ul>
     @foreach (var member in @Model.Members)
     {
-        <li>@Html.ActionLink(member, "Profile", "User")</li>
+        <li>@Html.ActionLink(member.Name, "Profile", "User", new { id = member.Id }) 
+            - Member of MeetDown since @member.Joined.ToShortDateString()</li>
     }
 </ul>
 
