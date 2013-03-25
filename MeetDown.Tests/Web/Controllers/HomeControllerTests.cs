@@ -33,7 +33,7 @@ namespace MeetDown.Tests.Web.Controllers
 
             // Assert
             Assert.NotNull(viewResult);
-            var groupSequence = viewResult.ViewBag.Groups as IEnumerable<Group>;
+            var groupSequence = viewResult.Model as IEnumerable<Group>;
             Assert.NotNull(groupSequence);
             
             var groups = groupSequence as IList<Group> ?? groupSequence.ToList();
