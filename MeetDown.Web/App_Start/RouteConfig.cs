@@ -17,7 +17,7 @@ namespace MeetDown.Web
                 name: "NonGroup",
                 url: "{controller}/{action}/{id}",
                 defaults: new {controller = "Home", action = "Index", id = UrlParameter.Optional},
-                constraints: new {controller = @"home|account|seed"}
+                constraints: new {controller = @"home|account|seed|tags"}
                 );
 
             //routes.MapRoute(
