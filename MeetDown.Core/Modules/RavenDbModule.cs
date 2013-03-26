@@ -24,7 +24,7 @@ namespace MeetDown.Core.Modules
             _store = new DocumentStore {ConnectionStringName = "RavenDB"};
             _store.Initialize();
 
-            IndexCreation.CreateIndexes(typeof(Groups_ByUser).Assembly, _store);
+            //IndexCreation.CreateIndexes(typeof(GroupsByUser).Assembly, _store);
         }
 
         public override void Load()
