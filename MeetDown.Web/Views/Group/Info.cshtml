@@ -19,3 +19,12 @@ Welcome to @Model.Group.Name!<br/>
 </ul>
 
 Gildt!
+
+<p>Her kommer tags som beskriver hva denne gruppa handler om:</p>
+
+<p>
+    @foreach (var tag in @Model.Group.Tags)
+    {
+        @Html.ActionLink(tag, "Find", "Tags", new { id = tag }, null)
+    }
+</p>
