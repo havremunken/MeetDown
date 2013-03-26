@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MeetDown.Core.Entities;
+using MeetDown.Core.Indexes;
 using MeetDown.Web.Models;
 using Raven.Client;
 
@@ -26,6 +27,20 @@ namespace MeetDown.Web.Controllers
 
         #endregion
         
+        public ActionResult Index()
+        {
+            var popularTags = _session.Query<TagPopularityResult, TagsByPopularity>()
+                                      .OrderByDescending(t => t.Count)
+                                      .ToList();
+
+            return View(popularTags);
+        }
+
+        /// <summary>
+        /// Finds all groups that have a certain tag
+        /// </summary>
+        /// <param name="id">The tag to search for</param>
+        /// <returns>A TagSearchModel containing the search results</returns>
         public ActionResult Find(string id)
         {
             var model = new TagSearchModel

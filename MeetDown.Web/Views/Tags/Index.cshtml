@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MeetDown.Core.Indexes.TagPopularityResult>
+
+@{
+    ViewBag.Title = "Tags sortert etter antall grupper de dukker opp i";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Count)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink(item.Tag, "Find", new { id = item.Tag })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Count)
+        </td>
+    </tr>
+}
+
+</table>

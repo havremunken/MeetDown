@@ -342,6 +342,7 @@
     <Content Include="Views\Group\UnknownGroup.cshtml" />
     <Content Include="Views\Group\Info.cshtml" />
     <Content Include="Views\Tags\Find.cshtml" />
+    <Content Include="Views\Tags\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
