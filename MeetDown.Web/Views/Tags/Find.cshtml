@@ -1,0 +1,14 @@
+﻿@model MeetDown.Web.Models.TagSearchModel
+
+@{
+    ViewBag.Title = "Groups with tag " + Model.Tag;
+}
+
+<h2>Groups with tag '@Model.Tag'</h2>
+
+<ul>
+@foreach (var grp in Model.Groups)
+{
+    <li>@Html.ActionLink(grp.Name, "Info", "Group", new { slug = grp.Slug }, null)</li>
+}
+</ul>
