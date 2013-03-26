@@ -69,6 +69,7 @@ namespace MeetDown.Core.Utility
             foreach (var grp in Groups)
             {
                 AddRandomMembers(grp);
+                AddRandomTags(grp);
                 _session.Store(grp);
             }
         }
@@ -83,6 +84,22 @@ namespace MeetDown.Core.Utility
             grp.Organizer = members.First().Id;
         }
 
+        private void AddRandomTags(Group grp)
+        {
+            var tags = new List<string>
+                {
+                    "C#", "Java", ".Net", "Scrum", "Agile", "Javascript", "Knivstikking", "Karsk", "Sykdom", "Tegnefilm", "Arduino",
+                    "Dårlig humor", "Smålighet", "Bitterhet", "Bråk", "Programmering", "Pair programming", "Silverlight", "WPF", "WF",
+                    "WCF", "Task Parallel Library", "Osteoporose", "Kremost", "Dårlige TV-vaner", "Potetgull", "Hockeyfights", "Krokan-is",
+                    "Test-Driven Development", "Code Coverage", "DSL", "Pizza", "Food fight"
+                };
+            var numberOfTags = _random.Next(1, tags.Count);
+            var selectedTags = tags.OrderBy(x => _random.Next())
+                           .Take(numberOfTags)
+                           .ToList();
+            grp.AddTags(selectedTags);
+        }
+
         private void AddUsers()
         {
             Users = new List<User>
@@ -92,7 +109,6 @@ namespace MeetDown.Core.Utility
                     "Christin Gorman",
                     "Francis Dougherty Paulin",
                     "Henning Kilset",
-                    "Henning Naarlien-Tolpinrud",
                     "iiN0ob",
                     "Jørgen Brudal Sandnes",
                     "Jørgen Schøyen Nicolaysen",

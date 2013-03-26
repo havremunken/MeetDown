@@ -47,6 +47,7 @@ namespace MeetDown.Tests.Core.Utility
                                                .ToList();
                 Assert.Equal(sut.Groups.Count, allDatabaseGroups.Count);
                 Assert.True(sut.Groups.All(g => g.Members.Any()));
+                Assert.True(sut.Groups.All(g => g.Tags.Any()));
             }
         }
 

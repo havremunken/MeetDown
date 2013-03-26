@@ -82,5 +82,9 @@ namespace MeetDown.Core.Entities
             ((List<string>)Members).AddRange(ids);
         }
 
+        public void AddTags(IEnumerable<string> tags)
+        {
+            ((List<string>)Tags).AddRange(tags);
+        }
     }
 }
