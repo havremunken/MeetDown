@@ -1,4 +1,5 @@
-﻿using Ninject.Modules;
+﻿using MeetDown.Core.Indexes;
+using Ninject.Modules;
 using Raven.Client;
 using Raven.Client.Document;
 using Raven.Client.Indexes;
@@ -23,7 +24,7 @@ namespace MeetDown.Core.Modules
             _store = new DocumentStore {ConnectionStringName = "RavenDB"};
             _store.Initialize();
 
-            IndexCreation.CreateIndexes(Assembly.GetCallingAssembly(), _store);
+            IndexCreation.CreateIndexes(typeof(Groups_ByUser).Assembly, _store);
         }
 
         public override void Load()
