@@ -75,7 +75,6 @@
     <Compile Include="TestBase\HttpStubs.cs" />
     <Compile Include="TestBase\NoStaleQueriesListener.cs" />
     <Compile Include="TestBase\RavenDbTest.cs" />
-    <Compile Include="Web\App_Start\RouteConfigTests.cs" />
     <Compile Include="Web\Controllers\GroupControllerTests.cs" />
     <Compile Include="Web\Controllers\HomeControllerTests.cs" />
     <Compile Include="Web\Controllers\UserControllerTests.cs" />
@@ -83,7 +82,9 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Web\App_Start\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MeetDown.Core\MeetDown.Core.csproj">
       <Project>{9cce295c-6b9a-4c4d-987a-b7b228011ced}</Project>
