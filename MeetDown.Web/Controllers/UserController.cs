@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AttributeRouting.Web.Mvc;
 using MeetDown.Core.Entities;
 using Raven.Client;
 
@@ -25,7 +26,8 @@ namespace MeetDown.Web.Controllers
 
         #endregion
 
-        public ActionResult Info(int id)
+        [GET("User/Profile/{id}")]
+        public ActionResult Info(string id)
         {
             var user = _session.Load<User>(id);
 
