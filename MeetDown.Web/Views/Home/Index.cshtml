@@ -23,7 +23,7 @@
 <ul>
     @foreach (var meetdownGroup in Model)
     {
-        <li>@Html.RouteLink(meetdownGroup.Name, "GroupRoute", new { slug = meetdownGroup.Slug, controller = "Group", action = "Info" }) (@meetdownGroup.Members.Count() members)</li>
+        <li>@Html.ActionLink(meetdownGroup.Name, "Info", "Group", new {slug = meetdownGroup.Slug}, null) (@meetdownGroup.Members.Count() members)</li>
     }
 </ul>
 

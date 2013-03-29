@@ -26,11 +26,11 @@ namespace MeetDown.Web
             //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             //);
 
-            routes.MapRoute(
-                name: "GroupRoute",
-                url: "{slug}/{action}/{id}",
-                defaults: new {controller = "Group", action = "Info", id = UrlParameter.Optional}
-                );
+            //routes.MapRoute(
+            //    name: "GroupRoute",
+            //    url: "{slug}/{action}/{id}",
+            //    defaults: new {controller = "Group", action = "Info", id = UrlParameter.Optional}
+            //    );
         }
     }
 }
