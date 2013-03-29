@@ -78,6 +78,7 @@
     <Compile Include="Web\App_Start\RouteConfigTests.cs" />
     <Compile Include="Web\Controllers\GroupControllerTests.cs" />
     <Compile Include="Web\Controllers\HomeControllerTests.cs" />
+    <Compile Include="Web\Controllers\UserControllerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

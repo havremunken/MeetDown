@@ -1,17 +1,26 @@
-﻿@model MeetDown.Core.Entities.User
+﻿@model MeetDown.Web.Models.UserProfileModel
 
 @{
-    ViewBag.Title = "Information about user " + Model.Name;
+    ViewBag.Title = "Information about user " + Model.User.Name;
 }
 
-<h2>@ViewBag.Title</h2>
+<h2>@Model.User.Name</h2>
 
 Sjansen er god for at det ikke er så mye info her!
 
-<p>Joined MeetDown: @Model.Joined.ToLongDateString()</p>
+<p>Joined MeetDown: @Model.User.Joined.ToLongDateString()</p>
 
 <p>
-    Introduksjon som vil være tom for alle: @Model.Introduction
+    Introduksjon som vil være tom for alle: @Model.User.Introduction
 </p>
 
-Hvis vi rekker: Lag en ViewModel som inneholder mer stuff, så vi kan få med gruppene som brukeren er med i.
+<p>
+    Grupper som brukeren er medlem av:
+    
+    <ul>
+        @foreach (var grp in Model.Groups)
+        {
+            <li>@Html.ActionLink(grp.Name, "Info", "Group", new { slug = grp.Slug }, null)</li>
+        }
+    </ul>
+</p>

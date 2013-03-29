@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using AttributeRouting.Web.Mvc;
 using MeetDown.Core.Entities;
+using MeetDown.Web.Models;
 using Raven.Client;
 
 namespace MeetDown.Web.Controllers
@@ -26,12 +27,14 @@ namespace MeetDown.Web.Controllers
 
         #endregion
 
-        [GET("User/Profile/{id}")]
+        [GET("Profile/{id}")]
         public ActionResult Info(string id)
         {
-            var user = _session.Load<User>(id);
+            var model = new UserProfileModel(id, _session);
+            if (model.User == null)
+                return View("UnknownUser");
 
-            return View(user);
+            return View(model);
         }
 
     }
