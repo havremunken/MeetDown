@@ -21,7 +21,11 @@ namespace MeetDown.Core.Modules
 
         public RavenDbModule()
         {
-            _store = new DocumentStore {ConnectionStringName = "RavenDB"};
+            _store = new DocumentStore
+                {
+                    ConnectionStringName = "RavenDB",
+                    Conventions = new DocumentConvention {IdentityPartsSeparator = "-"}
+                };
             _store.Initialize();
 
             IndexCreation.CreateIndexes(typeof(TagsByPopularity).Assembly, _store);
