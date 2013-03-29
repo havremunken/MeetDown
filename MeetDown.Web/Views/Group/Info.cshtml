@@ -13,8 +13,8 @@ Welcome to @Model.Group.Name!<br/>
 <ul>
     @foreach (var member in @Model.Members)
     {
-        <li>@Html.ActionLink(member.Name, "Profile", "User", new { id = member.Id }) 
-            - Member of MeetDown since @member.Joined.ToShortDateString()</li>
+        <li>@Html.ActionLink(member.Name, "Info", "User", new { id = member.Id }, null) 
+            - Member since @member.Joined.ToShortDateString()</li>
     }
 </ul>
 
