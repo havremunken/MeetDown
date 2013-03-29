@@ -2,6 +2,7 @@
 using MeetDown.Tests.TestBase;
 using MeetDown.Web.Controllers;
 using System.Web.Mvc;
+using MeetDown.Web.Models;
 using Xunit;
 
 namespace MeetDown.Tests.Web.Controllers
@@ -22,8 +23,9 @@ namespace MeetDown.Tests.Web.Controllers
                 var result = sut.Info(string.Empty);
 
                 // Assert
+                Assert.IsType<RedirectToRouteResult>(result);
                 var redirectResult = result as RedirectToRouteResult;
-                Assert.NotNull(redirectResult);
+                Assert.NotNull(redirectResult); // I know more than ReSharper
                 Assert.Equal(redirectResult.RouteValues["action"], "Index");
                 Assert.Equal(redirectResult.RouteValues["controller"], "Home");
             }
@@ -66,7 +68,10 @@ namespace MeetDown.Tests.Web.Controllers
 
                 // Assert
                 Assert.NotNull(result);
-                Assert.Same(testGroup, result.Model);
+                Assert.IsType<GroupInfoModel>(result.Model);
+                var viewModel = result.Model as GroupInfoModel;
+                Assert.NotNull(viewModel);
+                Assert.Same(testGroup, viewModel.Group);
                 Assert.Equal("Info", result.ViewName);
             }
         }
