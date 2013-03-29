@@ -1,0 +1,17 @@
+﻿@model MeetDown.Core.Entities.User
+
+@{
+    ViewBag.Title = "Information about user " + Model.Name;
+}
+
+<h2>@ViewBag.Title</h2>
+
+Sjansen er god for at det ikke er så mye info her!
+
+<p>Joined MeetDown: @Model.Joined.ToLongDateString()</p>
+
+<p>
+    Introduksjon som vil være tom for alle: @Model.Introduction
+</p>
+
+Hvis vi rekker: Lag en ViewModel som inneholder mer stuff, så vi kan få med gruppene som brukeren er med i.

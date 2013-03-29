@@ -207,6 +207,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SeedController.cs" />
     <Compile Include="Controllers\TagsController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -343,6 +344,7 @@
     <Content Include="Views\Group\Info.cshtml" />
     <Content Include="Views\Tags\Find.cshtml" />
     <Content Include="Views\Tags\Index.cshtml" />
+    <Content Include="Views\User\Info.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
