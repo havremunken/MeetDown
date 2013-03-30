@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AttributeRouting.Web.Mvc;
 using MeetDown.Core.Utility;
 using Raven.Client;
 
@@ -28,6 +29,7 @@ namespace MeetDown.Web.Controllers
 
         #endregion
 
+        [GET("Seed")]
         public ActionResult Index()
         {
             _seeder.PerformSeed();

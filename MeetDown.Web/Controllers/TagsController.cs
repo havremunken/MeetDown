@@ -30,7 +30,7 @@ namespace MeetDown.Web.Controllers
 
         #endregion
         
-        [GET("Index")]
+        [GET("")]
         public ActionResult Index()
         {
             var popularTags = _session.Query<TagPopularityResult, TagsByPopularity>()
@@ -45,7 +45,7 @@ namespace MeetDown.Web.Controllers
         /// </summary>
         /// <param name="id">The tag to search for</param>
         /// <returns>A TagSearchModel containing the search results</returns>
-        [GET("Find/{id}")]
+        [GET("{id}")]
         public ActionResult Find(string id)
         {
             var model = new TagSearchModel

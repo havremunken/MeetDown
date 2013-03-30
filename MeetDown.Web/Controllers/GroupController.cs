@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AttributeRouting;
 using AttributeRouting.Web.Mvc;
 using MeetDown.Web.Models;
 using Raven.Client;
@@ -27,7 +28,7 @@ namespace MeetDown.Web.Controllers
 
         #endregion
 
-        [GET("{slug}")]
+        [GET("{slug}", SitePrecedence = -1)]
         public ActionResult Info(string slug)
         {
             if (String.IsNullOrWhiteSpace(slug))
