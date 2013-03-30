@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using AttributeRouting.Web.Mvc;
 using MeetDown.Core.Entities;
 using Raven.Client;
 using System;
@@ -26,6 +27,8 @@ namespace MeetDown.Web.Controllers
 
         #endregion
 
+        [GET("", ActionPrecedence = 1)]
+        [GET("Home/Index")]
         public ActionResult Index()
         {
             ViewBag.Message = "Velkommen til MeetDown! Her har du en flott liste over våre største meetups!";
@@ -37,6 +40,7 @@ namespace MeetDown.Web.Controllers
             return View(groups);
         }
 
+        [GET("Home/About")]
         public ActionResult About()
         {
             ViewBag.Message = "Your app description page.";
@@ -44,6 +48,7 @@ namespace MeetDown.Web.Controllers
             return View();
         }
 
+        [GET("Home/Contact")]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
