@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AttributeRouting;
+using AttributeRouting.Web.Mvc;
 using MeetDown.Core.Entities;
 using MeetDown.Core.Indexes;
 using MeetDown.Web.Models;
@@ -10,6 +12,7 @@ using Raven.Client;
 
 namespace MeetDown.Web.Controllers
 {
+    [RoutePrefix("Tags")]
     public class TagsController : Controller
     {
         #region Fields
@@ -27,6 +30,7 @@ namespace MeetDown.Web.Controllers
 
         #endregion
         
+        [GET("Index")]
         public ActionResult Index()
         {
             var popularTags = _session.Query<TagPopularityResult, TagsByPopularity>()
@@ -41,6 +45,7 @@ namespace MeetDown.Web.Controllers
         /// </summary>
         /// <param name="id">The tag to search for</param>
         /// <returns>A TagSearchModel containing the search results</returns>
+        [GET("Find/{id}")]
         public ActionResult Find(string id)
         {
             var model = new TagSearchModel
