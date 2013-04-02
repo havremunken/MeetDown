@@ -9,6 +9,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Raven.Client.MvcIntegration;
 
 namespace MeetDown.Core.Modules
 {
@@ -27,6 +28,10 @@ namespace MeetDown.Core.Modules
                     Conventions = new DocumentConvention {IdentityPartsSeparator = "-"}
                 };
             _store.Initialize();
+
+            // Skru på profiling!
+            RavenProfiler.InitializeFor(_store);
+            // Dett var dett..
 
             IndexCreation.CreateIndexes(typeof(TagsByPopularity).Assembly, _store);
         }
