@@ -105,12 +105,11 @@ namespace MeetDown.Core.Utility
             Users = new List<User>
                 {
                     "Alexander Mjelstad",
-                    "Asgeir S. Nilsen",
                     "Christin Gorman",
+                    "Daniel Berg",
                     "Francis Dougherty Paulin",
                     "Henning Kilset",
                     "iiN0ob",
-                    "Jørgen Brudal Sandnes",
                     "Jørgen Schøyen Nicolaysen",
                     "Kirsti Nordseth Torgersen",
                     "Kristian Marheim Abrahamsen",
@@ -121,6 +120,7 @@ namespace MeetDown.Core.Utility
                     "Rune Jacobsen",
                     "Svein Arne Ackenhausen",
                     "Sølve Heggem",
+                    "Tomas Mortensen"
                 };
 
             foreach (var user in Users)
